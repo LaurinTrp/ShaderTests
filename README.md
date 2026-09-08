@@ -7,11 +7,12 @@ OpenGL shader experiments in Java, built with [LWJGL](https://www.lwjgl.org/) an
 - Java 15+
 - Eclipse IDE (or any setup that can compile the Eclipse project)
 - Linux natives for LWJGL (included under `lib/lwjgl/`)
-- Sibling Eclipse project **GLM** (referenced from `.classpath` as `/GLM`) for math types (`glm.*`)
+
+Math types come from the bundled [java-graphics/glm](https://github.com/java-graphics/glm) jar in `lib/math/` — no external project needed.
 
 ## Run
 
-1. Import this project and the `GLM` project into Eclipse.
+1. Import this project into Eclipse.
 2. Run `GUI.LWJGL_Main` as a Java application from the project root (so `res/` resolves correctly).
 3. Press **Esc** to quit.
 
@@ -63,6 +64,7 @@ res/
   Models/       OBJ meshes (e.g. Cube.obj)
 lib/
   lwjgl/        LWJGL jars + Linux natives
+  math/         GLM (OpenGL math) jar
   IOUtils/      Apache Commons IO
 ```
 
@@ -70,3 +72,4 @@ lib/
 
 - Resource paths are resolved from the working directory via `LWJGL_Main.PATHS` (`res/Shader/`, `res/Textures/`, `res/Models/`).
 - Bundled LWJGL natives are Linux-only; other platforms need matching natives from LWJGL.
+- GLM is MIT-licensed; see `lib/math/glm-LICENSE.txt`.
